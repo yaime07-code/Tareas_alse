@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> mapa; // valor -> índice
+        unordered_map<int, int> mapa; 
         for (int i = 0; i < nums.size(); i++) {
             int complemento = target - nums[i];
             if (mapa.find(complemento) != mapa.end()) {
@@ -15,7 +15,7 @@ public:
             }
             mapa[nums[i]] = i;
         }
-        return {}; // nunca debería pasar porque garantizan solución
+        return {}; 
     }
 };
 
@@ -37,7 +37,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> mapa; // valor -> índice
+        unordered_map<int, int> mapa; 
         for (int i = 0; i < nums.size(); i++) {
             int complemento = target - nums[i];
             if (mapa.find(complemento) != mapa.end()) {
@@ -45,7 +45,7 @@ public:
             }
             mapa[nums[i]] = i;
         }
-        return {}; // nunca debería pasar porque garantizan solución
+        return {}; 
     }
 };
 
@@ -54,7 +54,7 @@ int main() {
 
     cout << "Ingrese la lista de numeros separados por comas: ";
     string linea;
-    getline(cin, linea); // leer todo en una línea
+    getline(cin, linea); 
 
     vector<int> nums;
     stringstream ss(linea);
@@ -66,7 +66,7 @@ int main() {
 
     cout << "Ingrese el objetivo (target): ";
     string targetStr;
-    getline(cin, targetStr);  // ahora también lo leemos como string
+    getline(cin, targetStr);  
     int target = stoi(targetStr);
 
     vector<int> resultado = sol.twoSum(nums, target);
