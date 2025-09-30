@@ -11,8 +11,11 @@ int palindrome(int n)
         n = n / 10;         
     }
     if (temp == sum)
+    {
+        cout << temp << " Es un numero palindromo" << endl;
         return 1;
     else
+        cout << temp << " No es un numero palindromo pues no es igual a " << sum << endl;
         return 0;
 }
 
