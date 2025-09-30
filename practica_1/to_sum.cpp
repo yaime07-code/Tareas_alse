@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <sstream>
 using namespace std;
 
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> mapa; 
+        unordered_map<int, int> mapa; // valor -> índice
         for (int i = 0; i < nums.size(); i++) {
             int complemento = target - nums[i];
             if (mapa.find(complemento) != mapa.end()) {
@@ -14,21 +15,23 @@ public:
             }
             mapa[nums[i]] = i;
         }
-        return {}; 
+        return {}; // nunca debería pasar porque garantizan solución
     }
 };
 
 int main() {
     Solution sol;
 
-    int n;
-    cout << "Ingrese el tamaño de la lista: ";
-    cin >> n;
+    cout << "Ingrese la lista de numeros separados por comas: ";
+    string linea;
+    getline(cin, linea);
 
-    vector<int> nums(n);
-    cout << "Ingrese los " << n << " numeros: ";
-    for (int i = 0; i < n; i++) {
-        cin >> nums[i];
+    vector<int> nums;
+    stringstream ss(linea);
+    string token;
+
+    while (getline(ss, token, ',')) {
+        nums.push_back(stoi(token));
     }
 
     int target;
